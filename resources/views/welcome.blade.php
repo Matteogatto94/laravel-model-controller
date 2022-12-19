@@ -10,7 +10,25 @@
 </div>
 <div class="content">
     <div class="container my-5">
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere eveniet excepturi officia reiciendis. Tempore quam nostrum quod sequi distinctio voluptatem ut eos? Voluptatem voluptas, alias debitis ratione laudantium dolorum unde, culpa nemo quasi beatae rerum adipisci voluptatum, libero repudiandae eius! Similique, consequatur. Libero aut nam laborum reiciendis voluptate voluptatibus fuga, nobis blanditiis odio mollitia accusantium! Est reiciendis, nulla, quod soluta mollitia cumque aliquam sapiente omnis autem, vitae necessitatibus veniam ab aliquid. Est, architecto sed. Facilis, asperiores repudiandae aliquam ducimus explicabo nemo sed debitis, velit corrupti alias commodi consequuntur error exercitationem doloribus nam, nesciunt quam! A itaque illo architecto quam, nesciunt, dolor magnam quidem iusto dignissimos totam vero voluptas laborum doloremque libero repellendus nam rerum neque deserunt consequatur sequi. Maiores quas, incidunt optio quia dolore corporis assumenda, cum delectus perspiciatis eius iure velit nisi quos, repudiandae reprehenderit atque molestias exercitationem necessitatibus fugiat nihil ad libero hic et. Sunt, corporis ad dolorum aliquam assumenda similique adipisci perferendis veniam aperiam neque. Laboriosam maiores modi maxime iusto officiis sapiente animi voluptatum veniam non unde earum, atque nihil, ea assumenda sequi sit, corrupti nulla! Exercitationem, atque. Molestiae voluptatibus expedita iusto ratione inventore porro. Fugit nostrum ad doloremque dolore suscipit necessitatibus aspernatur sit ipsum consectetur veritatis porro incidunt laborum maxime pariatur consequatur, quae, recusandae ex temporibus. Odio nemo saepe reiciendis ducimus ipsum minima totam. Accusamus dicta pariatur eveniet, minima amet blanditiis suscipit nulla, distinctio nihil repudiandae nisi qui nobis ad reprehenderit id sunt et fuga expedita. Iure error ipsum suscipit amet voluptatem impedit facilis officiis ex pariatur, quidem perspiciatis dolorem ut voluptatum consequatur similique. Omnis, distinctio eum, beatae eligendi in enim at, amet dicta aut mollitia inventore excepturi. Quo, doloribus perspiciatis soluta provident dolores labore harum autem minima impedit placeat reprehenderit possimus! Provident modi fuga optio fugiat aperiam consequatur sit minima assumenda et, ex, voluptate porro!</p>
+        <div class="row row-cols-md-3 g-4">
+            @forelse($movies as $movie)
+            <div class="col p-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h3>{{$movie->title}}</h3>
+                        <h5>{{$movie->original_title}}</h5>
+                        <p>Nazionalità: {{$movie->nationality}}</p>
+                        <p>Data: {{$movie->date}}</p>
+                        <p>Voto: {{$movie->vote}}</p>
+                    </div>
+                </div>
+            </div>
+            @empty
+            <div class="col">
+                <p>Sorry, no movies in the store yet.</p>
+            </div>
+            @endforelse
+        </div>
     </div>
 </div>
 @endsection
